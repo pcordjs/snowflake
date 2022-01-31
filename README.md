@@ -19,7 +19,7 @@ const id = 937847820382261308n;
 const snowflake = new Snowflake(id);
 
 // Get the timestamp
-snowflake.getTime();
+snowflake.getDate();
 // -> Date(2022-01-31T23:12:24.749Z)
 
 // Get the internal worker ID

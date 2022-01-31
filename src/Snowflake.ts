@@ -17,7 +17,7 @@ export default class Snowflake {
   public readonly id: bigint;
 
   /** Gets the timestamp encoded in this snowflake */
-  public getTime(): Date {
+  public getDate(): Date {
     // bits 22+
     return new Date(Number(this.id >> 22n) + this.epoch.getTime());
   }
@@ -43,7 +43,7 @@ export default class Snowflake {
   /** Deserializes this snowflake into an object */
   public deserialize(): DeserializedSnowflake {
     return {
-      time: this.getTime(),
+      time: this.getDate(),
       workerId: this.getWorkerId(),
       processId: this.getProcessId(),
       increment: this.getIncrement()
