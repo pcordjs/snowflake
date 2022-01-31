@@ -1,6 +1,6 @@
 export const DISCORD_EPOCH = new Date(2015, 0, 1);
 
-/** A Twitter Snowflake, used to store unique IDs. */
+/** A 64 bit Twitter Snowflake, used to store unique IDs. */
 export default class Snowflake {
   /**
    * Creates a Snowflake from a string or bigint.
