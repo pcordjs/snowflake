@@ -49,7 +49,31 @@ export default class Snowflake {
       increment: this.getIncrement()
     };
   }
+
+  public static serialize(
+    snowflake: RecursiveReadonly<DeserializedSnowflake>,
+    epoch: Readonly<Date> = DISCORD_EPOCH
+  ): Snowflake {
+    return new Snowflake(
+      (BigInt(snowflake.time.getTime() - epoch.getTime()) << 22n) |
+        ((BigInt(snowflake.workerId) & 0b11111n) << 17n) |
+        ((BigInt(snowflake.processId) & 0b11111n) << 12n) |
+        (BigInt(snowflake.increment) & 0b111111111111n),
+      epoch
+    );
+  }
 }
+
+type RecursiveReadonly<T> = {
+  readonly [P in keyof T]: T[P] extends
+    | string
+    | number
+    | boolean
+    | symbol
+    | (() => unknown)
+    ? T[P]
+    : RecursiveReadonly<T[P]>;
+};
 
 export interface DeserializedSnowflake {
   time: Date;
