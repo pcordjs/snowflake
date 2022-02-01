@@ -1,6 +1,6 @@
 {
   "name": "@pcordjs/snowflake",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A parser for Discord Snowflakes",
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
@@ -28,5 +28,8 @@
   },
   "dependencies": {
     "tslib": "^2.3.1"
-  }
+  },
+  "files": [
+    "dist/"
+  ]
 }

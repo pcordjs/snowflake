@@ -8,6 +8,16 @@
 - Full coverage of the Snowflake format
 - Minimal dependencies
 
+## Installation
+
+This package can be installed with an `npm`-based package manager:
+
+```shell
+$ npm install @pcordjs/snowflake
+$ pnpm add @pcordjs/snowflake
+$ yarn add @pcordjs/snowflake
+```
+
 ## Usage
 
 ### Deserialization
