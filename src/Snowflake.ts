@@ -43,7 +43,7 @@ export default class Snowflake {
   /** Deserializes this snowflake into an object */
   public deserialize(): DeserializedSnowflake {
     return {
-      time: this.getDate(),
+      date: this.getDate(),
       workerId: this.getWorkerId(),
       processId: this.getProcessId(),
       increment: this.getIncrement()
@@ -55,7 +55,7 @@ export default class Snowflake {
     epoch: Readonly<Date> = DISCORD_EPOCH
   ): Snowflake {
     return new Snowflake(
-      (BigInt(snowflake.time.getTime() - epoch.getTime()) << 22n) |
+      (BigInt(snowflake.date.getTime() - epoch.getTime()) << 22n) |
         ((BigInt(snowflake.workerId) & 0b11111n) << 17n) |
         ((BigInt(snowflake.processId) & 0b11111n) << 12n) |
         (BigInt(snowflake.increment) & 0b111111111111n),
@@ -76,7 +76,7 @@ type RecursiveReadonly<T> = {
 };
 
 export interface DeserializedSnowflake {
-  time: Date;
+  date: Date;
   workerId: number;
   processId: number;
   increment: number;
