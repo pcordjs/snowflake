@@ -31,5 +31,10 @@
   },
   "files": [
     "dist/"
+  ],
+  "keywords": [
+    "discord",
+    "snowflake",
+    "parser"
   ]
 }
