@@ -14,7 +14,10 @@
     "Ghostoblivion"
   ],
   "license": "ISC",
-  "repository": "https://github.com/pcordjs/snowflake.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pcordjs/snowflake.git"
+  },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-angular": "^16.0.0",
